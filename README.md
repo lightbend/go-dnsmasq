@@ -1,4 +1,4 @@
-# Fork
+# Lightbend Fork
 
 The image is available at `lightbend-docker-registry.bintray.io/lightbend/go-dnsmasq:1.0.7-1`.
 
@@ -6,6 +6,12 @@ Changes (2018-01-25):
 - Update dependencies and lock them with go modules.
 - Update to go 1.11.
 - Update to alpine 3.8.
+
+## Releasing (for maintainers)
+
+Tag the commit, using upstream's version as reference:
+
+   git tag -a -m "Release v0.1.7-1" v0.1.7-1
 
 # go-dnsmasq
 [![Latest Version](https://img.shields.io/github/release/janeczku/go-dnsmasq.svg?maxAge=60)][release]
