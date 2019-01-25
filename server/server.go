@@ -12,7 +12,7 @@ import (
 	"sync"
 	"time"
 
-	log "github.com/Sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"github.com/coreos/go-systemd/activation"
 	"github.com/janeczku/go-dnsmasq/cache"
 	"github.com/miekg/dns"
@@ -62,11 +62,11 @@ func (s *server) Run() error {
 	}
 
 	if s.config.Systemd {
-		packetConns, err := activation.PacketConns(false)
+		packetConns, err := activation.PacketConns()
 		if err != nil {
 			return err
 		}
-		listeners, err := activation.Listeners(true)
+		listeners, err := activation.Listeners()
 		if err != nil {
 			return err
 		}

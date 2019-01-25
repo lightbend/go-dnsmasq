@@ -1,0 +1,9 @@
+dist: xenial
+services: [docker]
+script: make docker
+deploy:
+- provider: script
+  script: make docker-release
+  on:
+    branch: master
+    tags: true
