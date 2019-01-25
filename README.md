@@ -1,3 +1,12 @@
+# Fork
+
+The image is available at `lightbend-docker-registry.bintray.io/lightbend/go-dnsmasq:1.0.7-1`.
+
+Changes (2018-01-25):
+- Update dependencies and lock them with go modules.
+- Update to go 1.11.
+- Update to alpine 3.8.
+
 # go-dnsmasq
 [![Latest Version](https://img.shields.io/github/release/janeczku/go-dnsmasq.svg?maxAge=60)][release]
 [![Github All Releases](https://img.shields.io/github/downloads/janeczku/go-dnsmasq/total.svg?maxAge=86400)]()
@@ -8,6 +17,7 @@
 [hub]: https://hub.docker.com/r/janeczku/go-dnsmasq/
 
 go-dnsmasq is a lightweight (1.2 MB) DNS caching server/forwarder with minimal filesystem and runtime overhead.
+
 
 ### Application examples:
 

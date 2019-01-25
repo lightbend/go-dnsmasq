@@ -4,7 +4,7 @@ ADD . /src
 WORKDIR /src
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix static
 
-FROM scratch
+FROM alpine:3.8
 MAINTAINER Lightbend Monitoring Team <es-monitoring@lightbend.com>
 
 COPY --from=build /src/go-dnsmasq /go-dnsmasq
