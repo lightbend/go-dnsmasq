@@ -1,8 +1,13 @@
-FROM alpine:3.4
-MAINTAINER Jan Broer <janeczku@yahoo.com>
+FROM golang:1.11 as build
 
-ADD https://github.com/janeczku/go-dnsmasq/releases/download/1.0.7/go-dnsmasq-min_linux-amd64 /go-dnsmasq
-RUN chmod +x /go-dnsmasq
+ADD . /src
+WORKDIR /src
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix static
+
+FROM alpine:3.8
+MAINTAINER Lightbend Monitoring Team <es-monitoring@lightbend.com>
+
+COPY --from=build /src/go-dnsmasq /go-dnsmasq
 
 ENV DNSMASQ_LISTEN=0.0.0.0
 EXPOSE 53 53/udp
